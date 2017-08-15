@@ -1,22 +1,21 @@
-package yaml
+package json
 
 import (
 	"io/ioutil"
-	"gopkg.in/yaml.v2"
+	"encoding/json"
 	"strings"
 	"reflect"
 )
 
-var data map[interface{}]interface{}
+var data map[string]interface{}
 
 func Init(filename string) error {
-	data = make(map[interface{}]interface{})
-	fileData, err := ioutil.ReadFile(filename)
+	data = make(map[string]interface{})
+	bytes, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return err
 	}
-
-	if err := yaml.Unmarshal([]byte(fileData), data); err != nil {
+	if err := json.Unmarshal(bytes, &data); err != nil {
 		return err
 	}
 	return nil
@@ -28,7 +27,7 @@ func Get(key string) interface{} {
 	tempData := data
 	for index := 0; index < len(searchKeys); index++ {
 		if reflect.TypeOf(tempData[searchKeys[index]]) == reflect.TypeOf(data) {
-			tempData = tempData[searchKeys[index]].(map[interface{}]interface{})
+			tempData = tempData[searchKeys[index]].(map[string]interface{})
 		} else {
 			retData = tempData[searchKeys[index]]
 		}

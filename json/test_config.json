@@ -1,0 +1,29 @@
+{
+  "version": "v1.0.0",
+  "environments": "development",
+  "server": {
+    "port": ":1213",
+    "key": [
+      3,
+      4
+    ],
+    "session": {
+      "time": "3000ms",
+      "open": true,
+      "database": {
+        "addr": "localhost:6379",
+        "password": "",
+        "db": 0
+      }
+    }
+  },
+  "database": {
+    "open": true,
+    "type": "mysql",
+    "host": "localhost",
+    "port": "3306",
+    "database": "test",
+    "username": "root",
+    "password": "123456"
+  }
+}

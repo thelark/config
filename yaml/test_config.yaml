@@ -17,4 +17,4 @@ database:
   port: '3306'
   database: 'test'
   username: 'root'
-  password: '070019'
+  password: '123456'
