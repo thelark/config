@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <version>v1.0.0</version>
+    <environments>development</environments>
+    <server>
+        <port>:1213</port>
+        <session>
+            <time>3000ms</time>
+            <open>true</open>
+            <database>
+                <addr>localhost:6379</addr>
+                <password></password>
+                <db>0</db>
+            </database>
+        </session>
+    </server>
+</root>
+
